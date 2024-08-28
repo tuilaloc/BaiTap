@@ -1,0 +1,9 @@
+type Query {
+    products: [Product!]! @all
+    product(id: ID!): Product @field(resolver: "App\\GraphQL\\Mutations\\ProductMutator@getProduct")
+}
+
+type Query {
+    shippingMethods: [ShippingMethod!]! @all
+    shippingMethod(id: ID!): ShippingMethod @field(resolver: "App\\GraphQL\\Mutations\\ShippingMethodMutator@getShippingMethod")
+}

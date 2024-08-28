@@ -1,0 +1,40 @@
+type Mutation {
+  createProduct(
+    name: String!,
+    description: String!,
+    brand: String!,
+    price: Float!,
+    discounted_price: Float,
+    quantity: Int!,
+    availability: String!,
+    available_color: String!,
+    available_size: String!,
+    promotions: String,
+    image_main: String,
+    image_gallery: String
+  ): Product @field(resolver: "App\\GraphQL\\Mutations\\ProductMutator@createProduct")
+
+  updateProduct(
+    id: ID!,
+    name: String,
+    description: String,
+    brand: String,
+    price: Float,
+    discounted_price: Float,
+    quantity: Int,
+    availability: String,
+    available_color: String,
+    available_size: String,
+    promotions: String,
+    image_main: String,
+    image_gallery: String
+  ): Product @field(resolver: "App\\GraphQL\\Mutations\\ProductMutator@updateProduct")
+
+   deleteProduct(id: ID!): Product @field(resolver: "App\\GraphQL\\Mutations\\ProductMutator@deleteProduct")
+}
+
+type Mutation {
+    createShippingMethod(methodName: String!, description: String, cost: Float): ShippingMethod! @field(resolver: "App\\GraphQL\\Mutations\\ShippingMethodMutator@createShippingMethod")
+    updateShippingMethod(id: ID!, methodName: String, description: String, cost: Float): ShippingMethod! @field(resolver: "App\\GraphQL\\Mutations\\ShippingMethodMutator@updateShippingMethod")
+    deleteShippingMethod(id: ID!): Boolean! @field(resolver: "App\\GraphQL\\Mutations\\ShippingMethodMutator@deleteShippingMethod")
+}

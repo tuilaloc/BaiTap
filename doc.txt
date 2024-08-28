@@ -1,0 +1,7 @@
+pick table customers
+input data
+  viet SQL: insert
+
+make model
+make controller
+make view

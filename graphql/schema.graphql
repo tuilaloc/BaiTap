@@ -1,0 +1,29 @@
+#import mutation.graphql
+#import query.graphql
+
+type Product {
+  id: ID!
+  name: String!
+  description: String!
+  brand: String!
+  price: Float!
+  discounted_price: Float
+  quantity: Int!
+  availability: String!
+  available_color: String!
+  available_size: String!
+  promotions: String
+  image_main: String
+  image_gallery: String
+  created_at: DateTime
+  updated_at: DateTime
+}
+
+type ShippingMethod {
+    id: ID!
+    methodName: String!
+    description: String
+    cost: Float
+    created_at: String
+    updated_at: String
+}
